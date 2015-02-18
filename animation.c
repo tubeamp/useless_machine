@@ -8,34 +8,34 @@ uint8_t animation_index = 0;
 
 frame_t animation0[] =
 {
-	{ 0, 	DOOR_MAX,	ARM_MIN },
-	{ 1,	DOOR_MAX,	ARM_MAX }
+	{ 0, 	DOOR_MIN,	ARM_MIN },
+	{ 1,	DOOR_MIN,	ARM_MAX }
 };
 
 frame_t animation1[] =
 {
-	{ 0, 	DOOR_MAX,	ARM_MIN },
-	{ 50,	DOOR_MAX,	ARM_MAX }
+	{ 0, 	DOOR_MIN,	ARM_MIN },
+	{ 50,	DOOR_MIN,	ARM_MAX }
 };
 
 frame_t animation2[] =
 {
-	{ 0, 	DOOR_MAX,	ARM_MIN },
-	{ 50,	DOOR_MAX,	ARM_MAX-200 },
-	{ 100,	DOOR_MAX, 	ARM_MIN	},
-	{ 120,	DOOR_MIN, 	ARM_MIN	},
-	{ 150,	DOOR_MAX, 	ARM_MIN	},
-	{ 180,	DOOR_MAX,	ARM_MAX	}
+	{ 0, 	DOOR_MIN,	ARM_MIN },
+	{ 50,	DOOR_MIN,	ARM_MAX-200 },
+	{ 100,	DOOR_MIN, 	ARM_MIN	},
+	{ 120,	DOOR_MAX, 	ARM_MIN	},
+	{ 150,	DOOR_MIN, 	ARM_MIN	},
+	{ 180,	DOOR_MIN,	ARM_MAX	}
 };
 
 frame_t animation3[] =
 {
-	{ 0, 	DOOR_MAX,	ARM_MIN },
-	{ 50,	DOOR_MAX,	ARM_MAX-200 },
-	{ 70,	DOOR_MAX, 	ARM_MAX-400	},
-	{ 90,	DOOR_MAX, 	ARM_MAX-200	},
-	{ 110,	DOOR_MAX, 	ARM_MAX-400	},
-	{ 150,	DOOR_MAX,	ARM_MAX	}
+	{ 0, 	DOOR_MIN,	ARM_MIN },
+	{ 50,	DOOR_MIN,	ARM_MAX-200 },
+	{ 70,	DOOR_MIN, 	ARM_MAX-400	},
+	{ 90,	DOOR_MIN, 	ARM_MAX-200	},
+	{ 110,	DOOR_MIN, 	ARM_MAX-400	},
+	{ 150,	DOOR_MIN,	ARM_MAX	}
 };
 
 // all animations

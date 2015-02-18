@@ -9,8 +9,8 @@
 #define ARM_MIN		800		// parked
 #define ARM_MAX		1990	// extended
 
-#define DOOR_MIN	700		// closed
-#define DOOR_MAX	1000	// opened
+#define DOOR_MIN	1800	// opened
+#define DOOR_MAX	2250	// closed
 
 
 #endif // _SHARED_H_

@@ -9,8 +9,9 @@
 #include "util.h"
 #include "shared.h"
 
-
-#define STATE_PARKING 1
+#define STATE_WAITING 0
+#define STATE_PARKING 1		// parking arm
+#define STATE_CLOSING 2		// closing door
 
 
 // calculating timer top by timer overflow freqency
@@ -30,8 +31,8 @@ uint8_t state = 0;
 uint16_t frame = 0;
 
 
-void set_arm_pwm( uint16_t value );
-void set_door_pwm( uint16_t value );
+void set_arm_pwm	( uint16_t value );
+void set_door_pwm	( uint16_t value );
 
 
 /*------------------------------------------------------------
@@ -60,7 +61,7 @@ int main(void)
 	TCCR1A =	_BV( COM1A1 ) | _BV( COM1B1 ) |
 				_BV( WGM11 );
 
-    TCCR1B =	_BV( WGM13 ) | _BV( WGM12 ) |	// fast pwm, top icr1
+	TCCR1B =	_BV( WGM13 ) | _BV( WGM12 ) |	// fast pwm, top icr1
 				_BV( CS10 );					// f_cpu
 
 	TIMSK = _BV(TOIE1);							// timer ovf interrupt enable
@@ -69,16 +70,16 @@ int main(void)
 
 	set_arm_pwm( ARM_MIN );
 
-    sei();
+	sei();
 
-    uint16_t pos_arm = ARM_MIN;
+	uint16_t pos_arm = ARM_MIN;
 
-    animation_set(0);
+	animation_set(0);
 
-    uint8_t keyframe_index = 0;
+	uint8_t keyframe_index = 0;
 
 
-    while(1)
+	while(1)
 	{
 
 		if( !f_tick ) continue;
@@ -109,7 +110,7 @@ int main(void)
 			{
 				pos_arm = ARM_MIN;
 				state = 0;
-				set_door_pwm( DOOR_MIN );
+				set_door_pwm( DOOR_MAX ); // close door
 			}
 			set_arm_pwm( pos_arm );
 		}
